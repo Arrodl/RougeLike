@@ -1,6 +1,15 @@
 use rltk::{Rltk, GameState};
+use specs::prelude::*;
+use std::cmp::{man, min, max};
+use specs-derive::Component;
 
 struct State {}
+
+#[derive(Component)]
+struct Position {
+    x: i32,
+    y: i32,
+}
 
 impl GameState for State {
     fn tick(&mut self, ctx: &mut Rltk) {
